@@ -1,0 +1,18 @@
+[Unit]
+Description=lux (bot + agent + scan + watch + inbox)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/uisee/docs/tools/lux
+ExecStart=/home/uisee/docs/tools/lux/start_all.sh
+Restart=always
+RestartSec=5
+# 保证能读到 .env；PATH 含 venv
+Environment=PATH=/home/uisee/docs/tools/lux/.venv/bin:/usr/bin:/bin
+Environment=HOME=/home/uisee
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=default.target

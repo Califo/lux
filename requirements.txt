@@ -1,0 +1,5 @@
+redis>=5.0.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+lark-oapi>=1.4.0
+cursor-sdk>=1.0.31
